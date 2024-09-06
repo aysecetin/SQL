@@ -77,3 +77,26 @@ SELECT *
 FROM countries
 WHERE country IN ('Oman', 'Nicaragua', 'Bhutan', 'Senegal', 'Belarus')
 ```
+
+## The BETWEEN keyword
+
+- As of now, we learned to use bigger > and smaller < to demand a range for a field. But there is another way.
+
+Instead of writing 
+```sql
+col1 >= 5 AND col1 <= 10 >
+```
+we can write: 
+```sql
+col1 BETWEEN 5 AND 10
+```
+
+**Challenge**
+
+Fetch all of the records between 5 and 10
+
+```sql
+SELECT *
+FROM  data 
+WHERE value BETWEEN 5 AND 10
+```
