@@ -40,7 +40,7 @@ WHERE
 ORDER BY id DESC;
 ```
 
-Challenge
+**Challenge**
 
 Return all of the ids after ordering them by the weight in descending order
 
@@ -49,4 +49,31 @@ Return all of the ids after ordering them by the weight in descending order
 SELECT id
 FROM feathers
 ORDER BY weight DESC
+```
+
+## The IN keyword
+
+- The following query is very long:
+```sql
+SELECT *
+FROM table1
+WHERE col1 = 'a' OR col1 = 'b' OR col1 = 'c' OR col1 = 'd' OR ...
+```
+- We can simplify it by using the IN keyword like this:
+
+```sql
+SELECT *
+FROM table1
+WHERE col1 IN ('a', 'b', 'c', 'd', 'e', 'f')
+```
+**Challenge**
+
+Return all the records from the following countries:
+
+Oman, Nicaragua, Bhutan, Senegal, Belarus
+
+```sql
+SELECT *
+FROM countries
+WHERE country IN ('Oman', 'Nicaragua', 'Bhutan', 'Senegal', 'Belarus')
 ```
