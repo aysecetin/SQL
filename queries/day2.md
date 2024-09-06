@@ -107,10 +107,10 @@ WHERE value BETWEEN 5 AND 10
 
 Two main wildcards are used:
 
-% - means any number of characters
-_ - means exactly one character
-For example:
+% - means any number of characters  
+_ - means exactly one character  
 
+For example:
 - %a means any string that ends with a
 - a% means any string that starts with a
 - %a% means any string that contains a
