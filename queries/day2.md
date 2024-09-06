@@ -39,3 +39,14 @@ WHERE
     name IS NULL
 ORDER BY id DESC;
 ```
+
+Challenge
+
+Return all of the ids after ordering them by the weight in descending order
+
+```sql
+
+SELECT id
+FROM feathers
+ORDER BY weight DESC
+```
