@@ -100,3 +100,39 @@ SELECT *
 FROM  data 
 WHERE value BETWEEN 5 AND 10
 ```
+
+The LIKE keyword
+
+The LIKE keyword is used to check the similarities of strings. For example, if we want to fetch all of the records that the name starts with the letter a then we will use the LIKE keyword.
+
+Two main wildcards are used:
+
+% - means any number of characters
+_ - means exactly one character
+For example:
+
+- %a means any string that ends with a
+- a% means any string that starts with a
+- %a% means any string that contains a
+- _a% means that the letter a is the second character in the string
+- %a__ means that the string contains a in the 3rd from last place
+ 
+To use it we will write:
+
+```sql
+SELECT col1, col2, ...
+FROM table1
+WHERE col1 LIKE '%a__'
+```
+
+
+**Challenge**
+
+Fetch all of the people that their name starts with k and ends with a and order the results by the names in descending order.
+
+```sql
+SELECT *
+FROM people 
+WHERE name LIKE 'k%a'
+ORDER BY name desc
+```
