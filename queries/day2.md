@@ -101,9 +101,9 @@ FROM  data
 WHERE value BETWEEN 5 AND 10
 ```
 
-The LIKE keyword
+## The LIKE keyword
 
-The LIKE keyword is used to check the similarities of strings. For example, if we want to fetch all of the records that the name starts with the letter a then we will use the LIKE keyword.
+- The LIKE keyword is used to check the similarities of strings. For example, if we want to fetch all of the records that the name starts with the letter a then we will use the LIKE keyword.
 
 Two main wildcards are used:
 
