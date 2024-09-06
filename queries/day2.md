@@ -31,11 +31,11 @@ SELECT id, name
 FROM events
 -- Write your code below
 WHERE
-    -- Boyutun çok küçük (10MB'den küçük) veya çok büyük (1000MB'den büyük) olduğunu kontrol ediyoruz
+    -- We check whether the size is too small (less than 10MB) or too large (greater than 1000MB)
     size < 10 OR size > 1000 OR
-    -- Yılın 2000'den önce olduğunu kontrol ediyoruz
+    -- We check that the year is before 2000
     year < 2000 OR
-    -- İsmi eksik olanları kontrol ediyoruz
+    -- We check for missing names
     name IS NULL
 ORDER BY id DESC;
 ```
