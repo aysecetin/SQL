@@ -136,3 +136,23 @@ FROM people
 WHERE name LIKE 'k%a'
 ORDER BY name desc
 ```
+
+## Aliases
+
+- Column names are important to present data in a meaningful way. If you show a table with bad column names it will be hard for your audience to understand what are you talking about.
+
+To change column names you may use the AS keyword
+
+```sql 
+SELECT col1 AS firstColumn, col2 AS secondColumn, ...
+FROM table1
+```
+Challenge
+
+Fetch all of the kitchen items that the cutlery have less than 3 items. Change the cutlery column name to silverware  
+
+```sql
+SELECT cutlery AS silverware, amount
+FROM kitchen_items 
+WHERE amount < 3
+```
