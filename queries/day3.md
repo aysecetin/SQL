@@ -13,7 +13,7 @@ FROM cellphones
 WHERE model LIKE 'm%_o%' AND price BETWEEN 1000 AND 1500 AND wifi_5g IS TRUE
 
 ```
-
+------------------
 
 
 **Challange**
@@ -75,6 +75,7 @@ WHERE
     -- Exclude those who spoke a bad word (is_spoke_bad is not '1' or 'yes')
     AND (is_spoke_bad != '1' AND is_spoke_bad != 'yes');
 ```
+----------------------
 
 **Challenge**
 
