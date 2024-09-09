@@ -118,21 +118,21 @@ Extract the IDs of juices that are either old expired or almost expired. Sort th
 | 25  |     255      |      2001       |      2008       |
 
 ```sql
-SELECT 
-    id AS to_renew
-FROM 
-    beverages
+
+SELECT id AS to_renew
+FROM beverages
 WHERE 
-    -- Old Expired Juices: Expired more than 6 years ago
-    expiration_year < current_year - 6
-    OR
-    -- Almost Expired Juices: Expiring this year or next year
+    -- Old Expired Juices: expired more than 6 years ago
+    expiration_year < current_year - 6 
+    OR 
+    -- Almost Expired Juices: expiring this year or next year
     expiration_year BETWEEN current_year AND current_year + 1
 ORDER BY 
-    -- Sort by urgency: Greater difference between current year and expiration year first
     CASE 
-        WHEN expiration_year < current_year - 6 THEN current_year - expiration_year
-        WHEN expiration_year BETWEEN current_year AND current_year + 1 THEN expiration_year - current_year
-    END DESC,
-    id ASC;  -- Additional sort by ID if needed
+        -- Prioritize Old Expired Juices: Bigger difference means higher urgency
+        WHEN expiration_year < current_year - 6 THEN current_year - expiration_year 
+        -- Prioritize Almost Expired Juices: Closer expiration date means higher urgency
+        WHEN expiration_year BETWEEN current_year AND current_year + 1 THEN current_year + 1 - expiration_year
+    END DESC;
+
 ```
