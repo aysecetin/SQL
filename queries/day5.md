@@ -48,3 +48,36 @@ ORDER BY
     severe_score DESC
 LIMIT 5;
 ```
+------------
+
+## Challange
+
+A chocolate factory does not have enough resources. Chocolate must have 243 grams of sugar to be tasty. Each chocolate brand has a limited amount of sugar. For each brand extract the number of chocolates the factory can produce.
+
+Name the columns brand and choc_num.
+
+## The Table: Factory
+
+| Brand      | Sugar |
+|------------|-------|
+| Shandiin   | 824   |
+| Hordad     | 2289  |
+| Harinder   | 1344  |
+| Tamandani  | 404   |
+| Erdene     | 2025  |
+| Buhle      | 875   |
+| Ayanda     | 1651  |
+| Chima      | 2040  |
+| Yolotli    | 2724  |
+| Amarjeet   | 2182  |
+
+## Solution 
+
+```sql
+
+SELECT brand, sugar / 243 as choc_num
+FROM factory
+
+```
+
+
