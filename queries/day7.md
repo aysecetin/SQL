@@ -233,3 +233,29 @@ FROM STATION
 WHERE CITY NOT LIKE 'A%' AND CITY NOT LIKE 'E%' AND CITY NOT LIKE 'I%' AND CITY NOT LIKE 'O%' AND CITY NOT LIKE 'U%'
    OR CITY NOT LIKE '%a' AND CITY NOT LIKE '%e' AND CITY NOT LIKE '%i' AND CITY NOT LIKE '%o' AND CITY NOT LIKE '%u';
 ```
+
+### #9
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY NOT LIKE 'A%' AND CITY NOT LIKE 'E%' AND CITY NOT LIKE 'I%' AND CITY NOT LIKE 'O%' AND CITY NOT LIKE 'U%'
+  AND CITY NOT LIKE '%a' AND CITY NOT LIKE '%e' AND CITY NOT LIKE '%i' AND CITY NOT LIKE '%o' AND CITY NOT LIKE '%u';
+```
+
+## Challange
+
+Query the Name of any student in STUDENTS who scored higher than 75 Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+```sql
+SELECT Name
+FROM STUDENTS
+WHERE Marks > 75
+ORDER BY
+  CASE
+    WHEN LENGTH(Name) < 3 THEN Name
+    ELSE SUBSTR(Name, LENGTH(Name) - 2)
+  END ASC,
+  ID ASC;
+```
