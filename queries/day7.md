@@ -34,6 +34,7 @@ ORDER BY date desc
 
 ## Challange
 
+### #1
 Query the NAME field for all American cities in the CITY table with populations larger than 120000. The CountryCode for America is USA.
 
 The CITY table is described as follows:
@@ -58,6 +59,7 @@ WHERE COUNTRYCODE = 'USA'
   AND POPULATION > 120000;
 ```
 
+### #2
 Query all columns (attributes) for every row in the CITY table.
 
 
@@ -65,4 +67,13 @@ Query all columns (attributes) for every row in the CITY table.
 
 SELECT *
 FROM CITY;
+```
+
+### #3
+Query all columns for a city in CITY with the ID 1661.
+
+```sql
+SELECT * 
+FROM CITY
+WHERE ID = 1661;
 ```
