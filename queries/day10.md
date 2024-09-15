@@ -75,4 +75,43 @@ GROUP BY category
 ORDER BY total_gain DESC
 ```
 
+## 🧐Challenge
+
+Easy
+As the manager of a scooter shop, you have noticed that many scooters are not original, meaning they are missing a model name. Furthermore, bad scooters typically do not have lights.
+
+Your task involves two steps:
+
+First, Add to all scooter prices in the shop the overall average price.
+Then, Calculate the average price for each brand, considering only good and original scooters (i.e., scooters with a model name and lights).
+The result should include the brand and the average price - avg_price. Sort the results by the average price in ascending order.
+
+## Solution
+
+```sql
+WITH updated_scooters AS (
+    -- Adım 1: Genel ortalama fiyatı eklemek
+    SELECT 
+        brand,
+        model,
+        lights,
+        price + (SELECT AVG(price) FROM scooters) AS new_price
+    FROM scooters
+),
+good_scooters AS (
+    -- Adım 2: İyi ve orijinal scooterları filtrelemek
+    SELECT 
+        brand,
+        new_price
+    FROM updated_scooters
+    WHERE model IS NOT NULL AND lights = 1
+)
+-- Adım 3: Her marka için ortalama fiyatı hesaplayıp sıralamak
+SELECT 
+    brand,
+    AVG(new_price) AS avg_price
+FROM good_scooters
+GROUP BY brand
+ORDER BY avg_price ASC;
+```
 
