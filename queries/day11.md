@@ -64,3 +64,14 @@ GROUP BY
 HAVING 
     COUNT(e2.id) >= 5;
 ```
+### Explanation:
+
+**Self-Join:** We perform a self-join on the Employee table. In the JOIN condition, we check where the id of an employee (e.id) matches the managerId of another employee (e2.managerId), meaning that e is the manager of e2.
+
+**COUNT():** We count the number of employees (e2.id) who report to each manager.
+
+**HAVING COUNT(e2.id) >= 5:** We use the HAVING clause to filter out managers who have fewer than five direct reports.
+
+**GROUP BY:** We group by the id and name of the managers to apply the COUNT() function correctly.
+
+This will return the names of managers with at least five direct reports.
