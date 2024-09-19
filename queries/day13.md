@@ -59,3 +59,47 @@ WHERE id % 2 = 1
   AND description != 'boring'
 ORDER BY rating DESC;
 ```
+
+# RIGHT AND LEFT JOINS
+
+-An inner join allows us to retrieve combined records from two tables where a certain condition is met. However, there may be situations where we need to retrieve all records from one table and also the data from the other table where the condition is met. For that we have the **RIGHT**, **LEFT**.
+
+- For all of the explanations we will first assume we have the following tables:
+
+courses:
+course_id |	lecturer_id
+----------|-------------
+1	        | 1
+2	        |	2
+3	        |	10
+
+lecturers:
+lecturer_id	| lecturer_name
+------------|--------------
+1	          | Jhonas
+2	          | Malidos
+3	          | Eva
+
+**Problem:** We want to fetch all of the courses and replace the lecturer_id with lecturer_name. If the condition will not be met then the missing value should be null. To solve it we need to use either the LEFT or RIGHT join. RIGHT is not supported here but it is exactly the same as LEFT.
+
+```sql
+SELECT courses.course_id, courses.lecturer_id, lecturers.lecturer_name
+FROM courses
+LEFT JOIN lecturers ON courses.lecturer_id = lecturers.lecturer_id
+```
+Result:
+
+course_id	| lecturer_id	| lecturer_name
+----------|-------------|---------------
+1	        | 1	          |	Jhonas
+2	        | 2	          | Malidos
+3	        | 10	 
+
+- All records that the condition was met there is a value. others have remained with a null value.
+
+- The same thing we can do with RIGHT join, Just replace the tables from FROM and LEFT JOIN:
+
+```sql
+... FROM lecturers RIGHT JOIN courses ...
+... FROM courses LEFT JOIN lecturers ...
+```
