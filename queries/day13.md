@@ -103,3 +103,26 @@ course_id	| lecturer_id	| lecturer_name
 ... FROM lecturers RIGHT JOIN courses ...
 ... FROM courses LEFT JOIN lecturers ...
 ```
+
+## _Question_
+
+- Return the top 5 customers who have spent the most on all of their orders.
+
+- The total spending should be calculated by multiplying the unit price and quantity for each item in each order, and then summing up all the products.
+
+- The result should consist of two columns: customer_id and total_spending, and should be sorted in descending order based on the total_spending column.
+
+## _Solution_
+
+```sql
+
+SELECT orders.customer_id, SUM(order_items.quantity * products.price) AS total_spending
+FROM order_items
+LEFT JOIN orders ON orders.id = order_items.order_id 
+JOIN products ON order_items.product_id = products.id
+GROUP BY order_id
+ORDER BY total_spending DESC
+LIMIT 5
+```
+
+
