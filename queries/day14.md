@@ -8,23 +8,27 @@ SELECT col1, col2, ... FROM table1
 UNION
 SELECT col1, col2, ... FROM table2
 ```
-Both selects must obey the following rules:
+- Both selects must obey the following rules:
 
-The number of fields should be equal
-Order is important
-The columns in the same place must match the data types
-For example, let's assume we have the following tables:
+- The number of fields should be equal
+- Order is important
+- The columns in the same place must match the data types
+- For example, let's assume we have the following tables:
 
 germany_people
 
-id	name
-1	Lena
-2	Leonie
+| id |	name |
+|----|-------|
+|1	 | Lena  |
+|2 	 | Leonie|
+
 england_people
 
-id	name
-1	George
-2	Lena
+|id  |name   |
+|----|-------|
+|1	 |George |
+|2	 | Lena  |
+
 Problem: We want to make one big table of all the names we have.
 
 SELECT name from germany_people
