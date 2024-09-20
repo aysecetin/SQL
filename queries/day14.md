@@ -31,26 +31,33 @@ england_people
 
 Problem: We want to make one big table of all the names we have.
 
+```sql
 SELECT name from germany_people
 UNION
 SELECT name from england_people
+```
 Result:
 
-city
-Lena
-Leonie
-George
-UNION returns only distinct values while UNION ALL return all of the records as-is:
+|city  |
+|------|
+|Lena  |
+|Leonie|
+|George|
 
+UNION returns only distinct values while UNION ALL return all of the records as-is:
+```sql
 SELECT city from germany_cities
 UNION ALL
 SELECT city from england_cities
+```
+
 Result:
 
-city
-Lena
-Leonie
-George
-Lena
+|city  |
+|------|
+|Lena  |
+|Leonie|
+|George|
+|Lena  |
 
 ## Challange
