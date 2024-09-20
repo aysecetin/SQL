@@ -17,10 +17,10 @@ SELECT col1, col2, ... FROM table2
 
 germany_people
 
-| id |	name |
+ id  |	name 
 |----|-------|
-|1	 | Lena  |
-|2 	 | Leonie|
+ 1	 | Lena  
+ 2 	 | Leonie
 
 england_people
 
