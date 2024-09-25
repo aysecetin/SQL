@@ -2,7 +2,7 @@
 
 ## Challange
 
-Table: Project
+**Table: Project**
 
 
 | Column Name | Type    |
@@ -15,7 +15,7 @@ employee_id is a foreign key to Employee table.
 Each row of this table indicates that the employee with employee_id is working on the project with project_id.
  
 
-Table: Employee
+**Table: Employee**
 
 
 | Column Name      | Type    |
