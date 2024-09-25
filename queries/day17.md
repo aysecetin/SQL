@@ -65,8 +65,9 @@ Each row of this table indicates that the employee with employee_id is working o
 | 1           | 2.00          |
 | 2           | 2.50          |
 
-Explanation: The average experience years for the first project is (3 + 2 + 1) / 3 = 2.00 and for the second project is (3 + 2) / 2 = 2.50
+**Explanation:** The average experience years for the first project is (3 + 2 + 1) / 3 = 2.00 and for the second project is (3 + 2) / 2 = 2.50
 
+## Solution
 
 ```sql
 SELECT 
