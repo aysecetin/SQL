@@ -26,4 +26,3 @@ FROM students
 SELECT DISTINCT age
 FROM students
 ```
-
