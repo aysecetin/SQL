@@ -1,6 +1,6 @@
 # *Day 19*
 
-## COUNT 
+## COUNT OPERATOR
 
 - The COUNT function is used to count the number of rows.
 - COUNT does not count null values.
