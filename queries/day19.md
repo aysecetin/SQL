@@ -3,6 +3,7 @@
 ## COUNT 
 
 - The COUNT function is used to count the number of rows.
+- COUNT does not count null values.
 - Let's find the total number of students.
 
 ```sql
@@ -23,6 +24,12 @@ FROM students
 
 ```sql
 SELECT COUNT(ALL name)
+FROM students
+```
+- Besides ALL the other option is to use DISNTICT.
+
+```sql
+SELECT COUNT(DISTINCT name)
 FROM students
 ```
 
