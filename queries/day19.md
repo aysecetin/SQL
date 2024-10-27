@@ -28,5 +28,8 @@ FROM students
 ```
 - Besides ALL the other option is to use DISNTICT.
 
-
+```sql
+SELECT COUNT(DISTINCT name)
+FROM students
+```
 
