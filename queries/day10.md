@@ -15,6 +15,7 @@ id |price	|technology
 4	 |  13	| p92
 5  |	28	| MJ2
 
+- If we want to calculate the average price for all of the items that the technology contains the letter J then we need to use subqueries.
 
 *GROUP BY* keywords won't help us here because all of the technology terms are different.
 ```sql
