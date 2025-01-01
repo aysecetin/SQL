@@ -31,7 +31,7 @@ Query the difference between the maximum and minimum populations in CITY.
 
 ## Solution
 
-```mssql
+```mysql
 SELECT MAX(POPULATION) - MIN(POPULATION) AS PopulationDifferences
 FROM CITY;
 ```
