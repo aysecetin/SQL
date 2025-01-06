@@ -1,6 +1,6 @@
 # _DAY 21_
 
-## Challange 
+### Problem
 
 Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
 
@@ -10,7 +10,7 @@ Write a query identifying the type of each record in the TRIANGLES table using i
 - Not A Triangle: The given values of A, B, and C don't form a triangle.  
 
 
-Input Format
+**Input Format**
 
 The TRIANGLES table is described as follows:
 
@@ -21,7 +21,7 @@ The TRIANGLES table is described as follows:
 | C      | Integer |
 
 
-Sample Output
+**Sample Output**
 
 |  A  |  B  |  C  |
 |-----|-----|-----|
@@ -30,3 +30,4 @@ Sample Output
 |  20 | 21  | 22  |
 |  13 | 14  | 30  |
 
+### Solution
