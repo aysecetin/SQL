@@ -1,20 +1,20 @@
 ## _DAY 22_
 
 ## _Problem_
-You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.
+*You are given a table, BST, containing two columns: N and P, where N represents the value of a node in Binary Tree, and P is the parent of N.*
 
 column | type
 -------|---------
 N      |Integer
 P      |Integer
 
-Write a query to find the node type of Binary Tree ordered by the value of the node. Output one of the following for each node:
+*Write a query to find the node type of Binary Tree ordered by the value of the node. Output one of the following for each node:*
 
 - Root: If node is root node.   
 - Leaf: If node is leaf node.  
 - Inner: If node is neither root nor leaf node.  
 
-**Sample Input**
+***Sample Input***
 
 N  | P
 ---|-----
@@ -26,7 +26,7 @@ N  | P
 8  | 5
 5  | Null
 
-**Sample Output**
+***Sample Output***
 
 1 Leaf  
 2 Inner  
@@ -37,7 +37,7 @@ N  | P
 9 Leaf  
 
 
-## solution 
+## *solution* 
 ```mysql
 SELECT 
     N,
