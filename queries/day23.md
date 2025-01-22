@@ -2,7 +2,7 @@
 
 
 
-## Challenge
+### Challenge
 
 To build a castle the builder needs to have many tools. It is difficult to understand which tools he should use and in which order to use them. For that, we will extract the important information and help the builder create his castle. 
 
@@ -22,3 +22,32 @@ Remove all the rows with space equal to zero and remove all of the hours that co
 
 Return the hour, points and the points he used that hour - call this column used
 
+### Solution
+```sql
+WITH cumulating AS (
+    SELECT SUM(difficulty) OVER (ORDER BY row_num ASC) as tot_until_now
+    FROM (
+        SELECT name, difficulty, ROW_NUMBER() OVER (order by difficulty asc) as row_num 
+        FROM tools
+    )
+    order by difficulty 
+)
+
+SELECT hour, space
+FROM (
+    SELECT hour, power - used as space
+    FROM (
+        SELECT hour, power, (
+            SELECT tot_until_now 
+            FROM cumulating 
+            WHERE tot_until_now <= power 
+            ORDER BY tot_until_now DESC
+            LIMIT 1
+            ) as used
+        FROM strength
+    )
+)
+WHERE space > 0 AND hour NOT LIKE '%:30%'
+ORDER BY space DESC
+
+```
