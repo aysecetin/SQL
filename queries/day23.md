@@ -2,7 +2,7 @@
 
 
 
-Challenge
+## Challenge
 
 To build a castle the builder needs to have many tools. It is difficult to understand which tools he should use and in which order to use them. For that, we will extract the important information and help the builder create his castle. 
 
